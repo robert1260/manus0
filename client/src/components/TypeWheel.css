@@ -1,0 +1,314 @@
+/* 類型輪盤組件樣式
+   環形佈局 + 動態光暈效果
+*/
+
+.type-wheel-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wheelFadeIn 0.8s ease-out;
+}
+
+@keyframes wheelFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.wheel-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* 中心區域 */
+.wheel-center {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.3));
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  z-index: 10;
+  box-shadow: 
+    0 0 30px rgba(124, 58, 237, 0.2),
+    inset 0 0 30px rgba(124, 58, 237, 0.1);
+}
+
+.center-glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+  animation: centerGlow 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes centerGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(124, 58, 237, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 60px rgba(124, 58, 237, 0.6);
+    transform: scale(1.1);
+  }
+}
+
+.center-text {
+  position: relative;
+  z-index: 11;
+  text-align: center;
+  pointer-events: none;
+}
+
+.selected-type-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  margin-bottom: 4px;
+}
+
+.selected-type-hint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.center-hint {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 屬性環 */
+.types-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* 屬性按鈕 */
+.type-button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.3),
+    0 0 20px var(--glow-color);
+  left: 50%;
+  top: 50%;
+  transform: 
+    translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(-250px - var(--radius)))
+    rotate(calc(-1 * var(--angle)));
+  z-index: 5;
+  overflow: hidden;
+
+  /* 漸變背景 */
+  background: linear-gradient(135deg, var(--bg-color) 0%, color-mix(in srgb, var(--bg-color) 80%, black) 100%);
+}
+
+.type-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.type-button:hover {
+  transform: 
+    translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(-250px - var(--radius)))
+    rotate(calc(-1 * var(--angle)))
+    scale(1.15);
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.4),
+    0 0 30px var(--glow-color),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.type-button:hover::before {
+  opacity: 1;
+}
+
+.type-button.selected {
+  transform: 
+    translate(-50%, -50%)
+    rotate(var(--angle))
+    translateY(calc(-250px - var(--radius)))
+    rotate(calc(-1 * var(--angle)))
+    scale(1.25);
+  box-shadow: 
+    0 16px 32px rgba(0, 0, 0, 0.5),
+    0 0 40px var(--glow-color),
+    inset 0 0 30px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  animation: selectedPulse 0.6s ease-out;
+}
+
+@keyframes selectedPulse {
+  0% {
+    box-shadow: 
+      0 16px 32px rgba(0, 0, 0, 0.5),
+      0 0 40px var(--glow-color),
+      0 0 60px var(--glow-color),
+      inset 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 16px 32px rgba(0, 0, 0, 0.5),
+      0 0 40px var(--glow-color),
+      inset 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+.type-label {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .type-wheel-container {
+    width: 380px;
+    height: 380px;
+  }
+
+  .type-button {
+    width: 50px;
+    height: 50px;
+    font-size: 0.65rem;
+    transform: 
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-190px - var(--radius)))
+      rotate(calc(-1 * var(--angle)));
+  }
+
+  .type-button:hover {
+    transform: 
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-190px - var(--radius)))
+      rotate(calc(-1 * var(--angle)))
+      scale(1.1);
+  }
+
+  .type-button.selected {
+    transform: 
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-190px - var(--radius)))
+      rotate(calc(-1 * var(--angle)))
+      scale(1.2);
+  }
+
+  .wheel-center {
+    width: 110px;
+    height: 110px;
+  }
+
+  .center-glow {
+    width: 130px;
+    height: 130px;
+  }
+
+  .selected-type-name {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .type-wheel-container {
+    width: 300px;
+    height: 300px;
+  }
+
+  .type-button {
+    width: 42px;
+    height: 42px;
+    font-size: 0.6rem;
+    transform: 
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-150px - var(--radius)))
+      rotate(calc(-1 * var(--angle)));
+  }
+
+  .type-button:hover {
+    transform: 
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-150px - var(--radius)))
+      rotate(calc(-1 * var(--angle)))
+      scale(1.08);
+  }
+
+  .type-button.selected {
+    transform: 
+      translate(-50%, -50%)
+      rotate(var(--angle))
+      translateY(calc(-150px - var(--radius)))
+      rotate(calc(-1 * var(--angle)))
+      scale(1.15);
+  }
+
+  .wheel-center {
+    width: 90px;
+    height: 90px;
+  }
+
+  .center-glow {
+    width: 110px;
+    height: 110px;
+  }
+
+  .selected-type-name {
+    font-size: 1.1rem;
+  }
+
+  .selected-type-hint {
+    font-size: 0.65rem;
+  }
+}
