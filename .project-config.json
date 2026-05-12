@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663029089210/TEL2FvzipRMmKGuVSc3XeL",
+    "access_key_id": "ASIAZV3A2ECZLBZLZW65",
+    "secret_access_key": "HXNHXzF3mZxr1MZvqcs72YTOue7T105zhYxpZOYm",
+    "session_token": "IQoJb3JpZ2luX2VjEF8aCXVzLWVhc3QtMSJIMEYCIQCgCxG3aamHwXD8FpMQIrmr8hx6BRD4kSf65IjPgPI4JgIhAOq8AOrU2Zdfb8cPgZ0uEkRABrGCCitjdSNDRd4HhQ/LKvYDCCgQBBoMNjY1Mzg2MDk4ODY2IgzcHMIrM6Rac/J2DFQq0wMhL9hgqSsA+xcTH9bkJvBY97uxAKWothR1nQ/WJLKY3PmWi9cceDaM2A9VSXV2F6/ZBGwGD7CbKXLbLDg4f63o6NpXIXCm2TyrJ+8cIKSe4qBnN+xJWgDVtOE/4qjlwMSHd6r+xDoswAAg01aSWL2qseYkETCZGEkVkdpXkUnIouati8juk2CM6l96tLh9Y9nAlWoKQeid1AwbtV5SjGxgh6HUTrvnkF1HngJqRtqDKNsnOlcXofWdnmoYWxEGgdn/XtqwwOwU0/wuPsvNQpLsaB77V7mt1VN1dvirFqZkHsjGcUvubjBORpM6lXZi0fM8UQGVjCteYTZ2wKgRej93iS3kust02tKY4M3a2GieDebj5+KImFn0HNSXMmIMz/w3KQNDfRCBQOY2WJu5Xj0K/OS5f/k56SOlObVX07AEnYQjruB9AwMAMnEftViNhszDZssa8QzDXH46kMZq8HQesrOkzgFZ29f2j6XXHxVT9oKQq2w2SCb2FKttc82cYvBGHnI+WpuvFpwHxWfftDcVaCdAStBCU1UUxs7LEzxYrekmHnktdh4MlMEh2j4cbyKQQab/TN3HGJimBO0jxZelIqjKpc/Uu8D6vCuaH7bGXq5hUDDKn4vQBjqcAYSFAOhCC2uk0ZrqXUoUdnh1b50oiwE/dSp84e7BbfIKwpsUjKWstogJgyorrr+Z/iZ/OnekmZ7ZNIyydXKmwk44Q0ljTSAH1RG0DPyny+Ou9faYtd49qWjQi417MvGFbOyyNFnA2gCLPnjrqY/9qQEgP+HF4HcgJn3XlvgD1k2+Rjf7DqcnILis8T0UDUB5MOMxkP5pxl0IQBkS7A==",
+    "expiration": "2026-05-12T18:59:22.000Z"
+  },
+  "name": "pokemon_type_chart",
+  "path": "/home/ubuntu/pokemon_type_chart",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "6T7L4ugEwAB9ZBMfKcSU3X",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "iMsGqemCgJ3icFkTXeNv5t",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "Leonheart Chiu",
+    "OWNER_OPEN_ID": "CzPiCv8FRZaWVquLjV6gjM",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "1f1f7f96-19bd-4e4c-9537-7445b5d6ab28",
+    "VITE_APP_ID": "TEL2FvzipRMmKGuVSc3XeL",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "寶可夢屬性相剋表",
+    "VITE_FRONTEND_FORGE_API_KEY": "9cNaQWzTGApMADpXfFn82X",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
