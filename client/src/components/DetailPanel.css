@@ -30,11 +30,11 @@
 @keyframes panelFadeIn {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: translate(-50%, -50%) scale(0.8);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -163,28 +163,63 @@
   font-weight: 600;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
+/* 響應式設計 - 平板 */
+@media (max-width: 1024px) {
   .detail-panel-circular {
-    width: 320px;
-    height: 320px;
+    width: 380px;
+    height: 380px;
   }
 
   .center-badge {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
+    font-size: 1.2rem;
+  }
+
+  .quadrant-top,
+  .quadrant-bottom {
+    width: 260px;
+    padding: 14px;
+  }
+
+  .quadrant-left,
+  .quadrant-right {
+    width: 90px;
+    padding: 14px;
+  }
+
+  .quadrant-header {
+    font-size: 0.7rem;
+  }
+
+  .type-badge {
+    padding: 6px 9px;
+    font-size: 0.68rem;
+  }
+}
+
+/* 響應式設計 - 小平板 */
+@media (max-width: 768px) {
+  .detail-panel-circular {
+    width: 340px;
+    height: 340px;
+  }
+
+  .center-badge {
+    width: 85px;
+    height: 85px;
     font-size: 1.1rem;
   }
 
   .quadrant-top,
   .quadrant-bottom {
-    width: 220px;
+    width: 240px;
     padding: 12px;
   }
 
   .quadrant-left,
   .quadrant-right {
-    width: 80px;
+    width: 85px;
     padding: 12px;
   }
 
@@ -194,10 +229,59 @@
 
   .type-badge {
     padding: 5px 8px;
-    font-size: 0.65rem;
+    font-size: 0.63rem;
+  }
+
+  .type-list {
+    gap: 5px;
   }
 }
 
+/* 響應式設計 - 手機橫屏 */
+@media (max-width: 600px) {
+  .detail-panel-circular {
+    width: 300px;
+    height: 300px;
+  }
+
+  .center-badge {
+    width: 75px;
+    height: 75px;
+    font-size: 0.95rem;
+  }
+
+  .quadrant-top,
+  .quadrant-bottom {
+    width: 210px;
+    padding: 10px;
+    top: 18px;
+    bottom: 18px;
+  }
+
+  .quadrant-left,
+  .quadrant-right {
+    width: 75px;
+    padding: 10px;
+    left: 18px;
+    right: 18px;
+  }
+
+  .quadrant-header {
+    font-size: 0.6rem;
+    margin-bottom: 3px;
+  }
+
+  .type-badge {
+    padding: 4px 7px;
+    font-size: 0.58rem;
+  }
+
+  .type-list {
+    gap: 4px;
+  }
+}
+
+/* 響應式設計 - 手機豎屏 */
 @media (max-width: 480px) {
   .detail-panel-circular {
     width: 260px;
@@ -205,38 +289,87 @@
   }
 
   .center-badge {
-    width: 70px;
-    height: 70px;
-    font-size: 0.95rem;
+    width: 65px;
+    height: 65px;
+    font-size: 0.85rem;
   }
 
   .quadrant-top,
   .quadrant-bottom {
-    width: 180px;
-    padding: 10px;
+    width: 185px;
+    padding: 8px;
+    gap: 4px;
     top: 15px;
     bottom: 15px;
   }
 
   .quadrant-left,
   .quadrant-right {
-    width: 70px;
-    padding: 10px;
+    width: 65px;
+    padding: 8px;
+    gap: 4px;
     left: 15px;
     right: 15px;
   }
 
   .quadrant-header {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
     margin-bottom: 2px;
+    letter-spacing: 0.05em;
   }
 
   .type-badge {
-    padding: 4px 6px;
-    font-size: 0.6rem;
+    padding: 3px 6px;
+    font-size: 0.55rem;
   }
 
   .type-list {
-    gap: 4px;
+    gap: 3px;
+  }
+}
+
+/* 響應式設計 - 小手機 */
+@media (max-width: 380px) {
+  .detail-panel-circular {
+    width: 220px;
+    height: 220px;
+  }
+
+  .center-badge {
+    width: 55px;
+    height: 55px;
+    font-size: 0.75rem;
+  }
+
+  .quadrant-top,
+  .quadrant-bottom {
+    width: 160px;
+    padding: 6px;
+    gap: 3px;
+    top: 12px;
+    bottom: 12px;
+  }
+
+  .quadrant-left,
+  .quadrant-right {
+    width: 55px;
+    padding: 6px;
+    gap: 3px;
+    left: 12px;
+    right: 12px;
+  }
+
+  .quadrant-header {
+    font-size: 0.5rem;
+    margin-bottom: 1px;
+  }
+
+  .type-badge {
+    padding: 2px 5px;
+    font-size: 0.5rem;
+  }
+
+  .type-list {
+    gap: 2px;
   }
 }
