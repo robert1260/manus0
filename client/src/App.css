@@ -114,12 +114,22 @@ html, body {
 .interactive-section {
   display: flex;
   gap: 60px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1400px;
   animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+/* 輪盤和面板容器 - 相對定位 */
+.wheel-and-panel-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes fadeIn {

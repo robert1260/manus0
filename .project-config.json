@@ -3,13 +3,15 @@
   "capabilities": [],
   "dev_command": "pnpm run dev",
   "env_vars": {},
-  "experiments": null,
+  "experiments": [
+    "no_db_push"
+  ],
   "git_remote": {
     "repo_url": "s3://vida-prod-gitrepo/webdev-git/310419663029089210/TEL2FvzipRMmKGuVSc3XeL",
-    "access_key_id": "ASIAZV3A2ECZLBZLZW65",
-    "secret_access_key": "HXNHXzF3mZxr1MZvqcs72YTOue7T105zhYxpZOYm",
-    "session_token": "IQoJb3JpZ2luX2VjEF8aCXVzLWVhc3QtMSJIMEYCIQCgCxG3aamHwXD8FpMQIrmr8hx6BRD4kSf65IjPgPI4JgIhAOq8AOrU2Zdfb8cPgZ0uEkRABrGCCitjdSNDRd4HhQ/LKvYDCCgQBBoMNjY1Mzg2MDk4ODY2IgzcHMIrM6Rac/J2DFQq0wMhL9hgqSsA+xcTH9bkJvBY97uxAKWothR1nQ/WJLKY3PmWi9cceDaM2A9VSXV2F6/ZBGwGD7CbKXLbLDg4f63o6NpXIXCm2TyrJ+8cIKSe4qBnN+xJWgDVtOE/4qjlwMSHd6r+xDoswAAg01aSWL2qseYkETCZGEkVkdpXkUnIouati8juk2CM6l96tLh9Y9nAlWoKQeid1AwbtV5SjGxgh6HUTrvnkF1HngJqRtqDKNsnOlcXofWdnmoYWxEGgdn/XtqwwOwU0/wuPsvNQpLsaB77V7mt1VN1dvirFqZkHsjGcUvubjBORpM6lXZi0fM8UQGVjCteYTZ2wKgRej93iS3kust02tKY4M3a2GieDebj5+KImFn0HNSXMmIMz/w3KQNDfRCBQOY2WJu5Xj0K/OS5f/k56SOlObVX07AEnYQjruB9AwMAMnEftViNhszDZssa8QzDXH46kMZq8HQesrOkzgFZ29f2j6XXHxVT9oKQq2w2SCb2FKttc82cYvBGHnI+WpuvFpwHxWfftDcVaCdAStBCU1UUxs7LEzxYrekmHnktdh4MlMEh2j4cbyKQQab/TN3HGJimBO0jxZelIqjKpc/Uu8D6vCuaH7bGXq5hUDDKn4vQBjqcAYSFAOhCC2uk0ZrqXUoUdnh1b50oiwE/dSp84e7BbfIKwpsUjKWstogJgyorrr+Z/iZ/OnekmZ7ZNIyydXKmwk44Q0ljTSAH1RG0DPyny+Ou9faYtd49qWjQi417MvGFbOyyNFnA2gCLPnjrqY/9qQEgP+HF4HcgJn3XlvgD1k2+Rjf7DqcnILis8T0UDUB5MOMxkP5pxl0IQBkS7A==",
-    "expiration": "2026-05-12T18:59:22.000Z"
+    "access_key_id": "ASIAZV3A2ECZGXWSWL6I",
+    "secret_access_key": "iWZTQndL6Q2jwiuaRHTAQunrTiDe2zGYoGTR8zWR",
+    "session_token": "IQoJb3JpZ2luX2VjEHEaCXVzLWVhc3QtMSJIMEYCIQCxzm7q7G3nqLouesHNKOZ4kLjqYzQHshW/yGoz1j3RgQIhALfbE7CDp4DJ1qvWjPAfWa5IE1nhmX6UTFWlcBpFTOKfKvYDCDoQBBoMNjY1Mzg2MDk4ODY2IgygFJAqg4k+dJmU3soq0wNNMR2SpfTlLNPA0YSu8LoqPSwkLrnWLCyFOKpx8kehR6n7QZ2P7slB/Wwcbfe0QB2l2/ELEaNn7KaGqcu64dC52WkoPdGnPZJJYfecH72TYUpJhbo+vXPGPGUvzIwBCnrAy9jtkQn8scXiMcBFhbyVGO+7ridlJgwvUx92wRZFa6O9QVzi6QdjolagmLPmLXpIB6GUNZPi0vDCobMNQLrbojUe3LJFfR3eq/5eQCREKXJvF1y0ejAixJX4tdquAbG7SoTnUqgns12w0H+Cdzo7rulx0a55NGYyV4KZXPaPth2rHlvuCxriQBWQ9gfBjIM0gogvADU4nPjHc4IsAGwkkTFLjJpJRUGccF9Vb33u50o2TM3OdihWXgi3JD1Ja6Cl3xpTSy64NlLv8IM5WxgiZ8+A3W+brsbkz2IvVkEGenomB2e86MjWpzCZ6A2ZFj5jJ6t4/amsfKPsbQ/rndpMh6xI0eCHtQL03bawIPptpgI5Ndjjc4V9J+JCoBIRArlSlI6fnf0QHKmEs2ldbifJxeSAovJgIsabZite+zuq0dve6L7ssXF3+6ZIdXKc64s0DWyxqpLikE3ASjGp0Oqi2HCUJUJlM7iav2oz+mct1N7fkjDqmI/QBjqcAS+2OL4jdrbEBPqm4IAoJg3F056D1zjTm/TarwiyS950p/xoZOkJr9wIuWucC7Akg6RJkWjYuNAFiTkNhFdpAeOoKUmolpne6IHKsjKM1hQiWgTTEIbfPXnoLBIG1cnFw/r5890Eyv6DntumjeByLoXB303xN6L3KFndNk+I8ndR7d2V7duHq3tyJak8KzkpkhpmLHqVGeTivSntaQ==",
+    "expiration": "2026-05-13T12:57:14.000Z"
   },
   "name": "pokemon_type_chart",
   "path": "/home/ubuntu/pokemon_type_chart",

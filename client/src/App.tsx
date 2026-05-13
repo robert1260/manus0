@@ -22,19 +22,21 @@ export default function App() {
 
         {/* 核心互動區 */}
         <div className="interactive-section">
-          <TypeWheel 
-            selectedType={selectedType} 
-            onTypeSelect={setSelectedType}
-          />
-          
-          {/* 詳情面板 */}
-          {selectedType && (
-            <DetailPanel 
-              type={selectedType}
-              advantages={getAdvantages(selectedType)}
-              disadvantages={getDisadvantages(selectedType)}
+          <div className="wheel-and-panel-container">
+            <TypeWheel 
+              selectedType={selectedType} 
+              onTypeSelect={setSelectedType}
             />
-          )}
+            
+            {/* 圓形詳情面板 - 覆蓋在輪盤上 */}
+            {selectedType && (
+              <DetailPanel 
+                type={selectedType}
+                advantages={getAdvantages(selectedType)}
+                disadvantages={getDisadvantages(selectedType)}
+              />
+            )}
+          </div>
         </div>
 
         {/* 說明文字 */}

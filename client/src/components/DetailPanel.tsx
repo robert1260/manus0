@@ -1,4 +1,4 @@
-import { PokemonType, TYPE_COLORS } from '../data/typeChart';
+import { PokemonType, TYPE_COLORS, POKEMON_TYPES, TYPE_EFFECTIVENESS } from '../data/typeChart';
 import './DetailPanel.css';
 
 interface DetailPanelProps {
@@ -7,80 +7,121 @@ interface DetailPanelProps {
   disadvantages: PokemonType[];
 }
 
+// 計算被該屬性克制的屬性 (受擊被剋)
+function getWeakTo(type: PokemonType): PokemonType[] {
+  return POKEMON_TYPES.filter(t => TYPE_EFFECTIVENESS[t][type] === 1.25);
+}
+
+// 計算對該屬性有抵抗的屬性 (受擊防禦)
+function getResistsFrom(type: PokemonType): PokemonType[] {
+  return POKEMON_TYPES.filter(t => TYPE_EFFECTIVENESS[t][type] === 0.8);
+}
+
 export default function DetailPanel({ type, advantages, disadvantages }: DetailPanelProps) {
   const colors = TYPE_COLORS[type];
+  
+  const weakTo = getWeakTo(type);
+  const resistsFrom = getResistsFrom(type);
 
   return (
-    <div className="detail-panel" style={{ '--type-color': colors.bg } as React.CSSProperties}>
-      <div className="panel-header">
-        <div className="header-title">
-          <div className="type-badge" style={{ backgroundColor: colors.bg, color: colors.text }}>
-            {type}
-          </div>
-          <h2>相剋分析</h2>
+    <div className="detail-panel-circular" style={{ '--type-color': colors.bg } as React.CSSProperties}>
+      {/* 上方 - 攻擊強化 */}
+      <div className="panel-quadrant quadrant-top">
+        <div className="quadrant-header">攻擊強化</div>
+        <div className="type-list">
+          {advantages.length > 0 ? (
+            advantages.map(adv => (
+              <div
+                key={adv}
+                className="type-badge"
+                style={{
+                  backgroundColor: TYPE_COLORS[adv].bg,
+                  color: TYPE_COLORS[adv].text,
+                }}
+              >
+                {adv}
+              </div>
+            ))
+          ) : (
+            <div className="empty-state">無</div>
+          )}
         </div>
       </div>
 
-      <div className="panel-content">
-        {/* 優勢區 */}
-        <div className="relation-section advantages">
-          <div className="section-header">
-            <span className="section-icon">⚔️</span>
-            <h3>克制屬性 (超級有效)</h3>
-            <span className="count">{advantages.length}</span>
-          </div>
-          <div className="type-list">
-            {advantages.length > 0 ? (
-              advantages.map(adv => (
-                <div
-                  key={adv}
-                  className="type-item advantage-item"
-                  style={{
-                    backgroundColor: TYPE_COLORS[adv].bg,
-                    color: TYPE_COLORS[adv].text,
-                  }}
-                >
-                  <span className="type-name">{adv}</span>
-                  <span className="multiplier">1.25x</span>
-                </div>
-              ))
-            ) : (
-              <div className="empty-state">沒有克制屬性</div>
-            )}
-          </div>
-        </div>
-
-        {/* 劣勢區 */}
-        <div className="relation-section disadvantages">
-          <div className="section-header">
-            <span className="section-icon">🛡️</span>
-            <h3>被克制屬性 (不太有效)</h3>
-            <span className="count">{disadvantages.length}</span>
-          </div>
-          <div className="type-list">
-            {disadvantages.length > 0 ? (
-              disadvantages.map(dis => (
-                <div
-                  key={dis}
-                  className="type-item disadvantage-item"
-                  style={{
-                    backgroundColor: TYPE_COLORS[dis].bg,
-                    color: TYPE_COLORS[dis].text,
-                  }}
-                >
-                  <span className="type-name">{dis}</span>
-                  <span className="multiplier">0.8x</span>
-                </div>
-              ))
-            ) : (
-              <div className="empty-state">沒有被克制屬性</div>
-            )}
-          </div>
+      {/* 左方 - 攻擊弱化 */}
+      <div className="panel-quadrant quadrant-left">
+        <div className="quadrant-header">攻擊弱化</div>
+        <div className="type-list">
+          {disadvantages.length > 0 ? (
+            disadvantages.map(dis => (
+              <div
+                key={dis}
+                className="type-badge"
+                style={{
+                  backgroundColor: TYPE_COLORS[dis].bg,
+                  color: TYPE_COLORS[dis].text,
+                }}
+              >
+                {dis}
+              </div>
+            ))
+          ) : (
+            <div className="empty-state">無</div>
+          )}
         </div>
       </div>
 
-      <div className="panel-footer">
-        <p className="tip">💡 提示：超級有效表示該屬性的攻擊對目標屬性造成1.25倍傷害；不太有效表示只造成0.8倍傷害</p>
+      {/* 中心 - 屬性名稱 */}
+      <div className="panel-center">
+        <div className="center-badge" style={{ backgroundColor: colors.bg, color: colors.text }}>
+          {type}
+        </div>
+      </div>
+
+      {/* 右方 - 受擊被剋 */}
+      <div className="panel-quadrant quadrant-right">
+        <div className="quadrant-header">受擊被剋</div>
+        <div className="type-list">
+          {weakTo.length > 0 ? (
+            weakTo.map(w => (
+              <div
+                key={w}
+                className="type-badge"
+                style={{
+                  backgroundColor: TYPE_COLORS[w].bg,
+                  color: TYPE_COLORS[w].text,
+                }}
+              >
+                {w}
+              </div>
+            ))
+          ) : (
+            <div className="empty-state">無</div>
+          )}
+        </div>
+      </div>
+
+      {/* 下方 - 受擊防禦 */}
+      <div className="panel-quadrant quadrant-bottom">
+        <div className="quadrant-header">受擊防禦</div>
+        <div className="type-list">
+          {resistsFrom.length > 0 ? (
+            resistsFrom.map(r => (
+              <div
+                key={r}
+                className="type-badge"
+                style={{
+                  backgroundColor: TYPE_COLORS[r].bg,
+                  color: TYPE_COLORS[r].text,
+                }}
+              >
+                {r}
+              </div>
+            ))
+          ) : (
+            <div className="empty-state">無</div>
+          )}
+        </div>
       </div>
     </div>
   );
