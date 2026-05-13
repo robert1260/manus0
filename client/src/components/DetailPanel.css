@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: auto;
 }
 
@@ -100,6 +100,7 @@
   transform: translateY(-50%);
   width: 100px;
   z-index: 5;
+  right: auto;
 }
 
 /* 右方象限 */
@@ -109,6 +110,7 @@
   transform: translateY(-50%);
   width: 100px;
   z-index: 5;
+  left: auto;
 }
 
 /* 象限標題 */
@@ -256,14 +258,28 @@
     padding: 10px;
     top: 18px;
     bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .quadrant-left,
+  .quadrant-left {
+    width: 75px;
+    padding: 10px;
+    gap: 4px;
+    left: 18px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .quadrant-right {
     width: 75px;
     padding: 10px;
-    left: 18px;
+    gap: 4px;
     right: 18px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .quadrant-header {
@@ -301,15 +317,28 @@
     gap: 4px;
     top: 15px;
     bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .quadrant-left,
-  .quadrant-right {
+  .quadrant-left {
     width: 65px;
     padding: 8px;
     gap: 4px;
     left: 15px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .quadrant-right {
+    width: 65px;
+    padding: 8px;
+    gap: 4px;
     right: 15px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .quadrant-header {
@@ -348,15 +377,28 @@
     gap: 3px;
     top: 12px;
     bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .quadrant-left,
-  .quadrant-right {
+  .quadrant-left {
     width: 55px;
     padding: 6px;
     gap: 3px;
     left: 12px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .quadrant-right {
+    width: 55px;
+    padding: 6px;
+    gap: 3px;
     right: 12px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .quadrant-header {
