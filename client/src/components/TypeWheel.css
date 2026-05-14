@@ -316,3 +316,12 @@
 	  .selected-type-name {
 	    font-size: 0.9rem;
 	  }
+
+.selected-type-hint {
+	   font-size: 0.55rem;
+	}
+
+.center-hint {
+	font-size: 0.6rem;
+	}
+		}
