@@ -209,107 +209,110 @@
   white-space: nowrap;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
-  .type-wheel-container {
-    width: 380px;
-    height: 380px;
-  }
-
-  .type-button {
-    width: 50px;
-    height: 50px;
-    font-size: 0.65rem;
-    transform: 
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-190px - var(--radius)))
-      rotate(calc(-1 * var(--angle)));
-  }
-
-  .type-button:hover {
-    transform: 
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-190px - var(--radius)))
-      rotate(calc(-1 * var(--angle)))
-      scale(1.1);
-  }
-
-  .type-button.selected {
-    transform: 
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-190px - var(--radius)))
-      rotate(calc(-1 * var(--angle)))
-      scale(1.2);
-  }
-
-  .wheel-center {
-    width: 110px;
-    height: 110px;
-  }
-
-  .center-glow {
-    width: 130px;
-    height: 130px;
-  }
-
-  .selected-type-name {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .type-wheel-container {
-    width: 300px;
-    height: 300px;
-  }
-
-  .type-button {
-    width: 42px;
-    height: 42px;
-    font-size: 0.6rem;
-    transform: 
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-150px - var(--radius)))
-      rotate(calc(-1 * var(--angle)));
-  }
-
-  .type-button:hover {
-    transform: 
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-150px - var(--radius)))
-      rotate(calc(-1 * var(--angle)))
-      scale(1.08);
-  }
-
-  .type-button.selected {
-    transform: 
-      translate(-50%, -50%)
-      rotate(var(--angle))
-      translateY(calc(-150px - var(--radius)))
-      rotate(calc(-1 * var(--angle)))
-      scale(1.15);
-  }
-
-  .wheel-center {
-    width: 90px;
-    height: 90px;
-  }
-
-  .center-glow {
-    width: 110px;
-    height: 110px;
-  }
-
-  .selected-type-name {
-    font-size: 1.1rem;
-  }
-
-  .selected-type-hint {
-    font-size: 0.65rem;
-  }
-}
+	/* 響應式設計 */
+	@media (max-width: 768px) {
+	  .type-wheel-container {
+	    width: 380px;
+	    height: 380px;
+	  }
+	
+	  .type-button {
+	    width: 50px;
+	    height: 50px;
+	    font-size: 0.65rem;
+	    transform: 
+	      translate(-50%, -50%)
+	      rotate(var(--angle))
+	      translateY(calc(-190px - var(--radius)))
+	      rotate(calc(-1 * var(--angle)));
+	  }
+	
+	  .type-button:hover {
+	    transform: 
+	      translate(-50%, -50%)
+	      rotate(var(--angle))
+	      translateY(calc(-190px - var(--radius)))
+	      rotate(calc(-1 * var(--angle)))
+	      scale(1.1);
+	  }
+	
+	  .type-button.selected {
+	    transform: 
+	      translate(-50%, -50%)
+	      rotate(var(--angle))
+	      translateY(calc(-190px - var(--radius)))
+	      rotate(calc(-1 * var(--angle)))
+	      scale(1.2);
+	  }
+	
+	  .wheel-center {
+	    width: 110px;
+	    height: 110px;
+	  }
+	
+	  .center-glow {
+	    width: 130px;
+	    height: 130px;
+	  }
+	
+	  .selected-type-name {
+	    font-size: 1.1rem;
+	  }
+	
+	  .selected-type-hint {
+	    font-size: 0.65rem;
+	  }
+	
+	  .center-hint {
+	    font-size: 0.75rem;
+	  }
+	}
+	
+	@media (max-width: 480px) {
+	  .type-wheel-container {
+	    width: 300px;
+	    height: 300px;
+	  }
+	
+	  .type-button {
+	    width: 42px;
+	    height: 42px;
+	    font-size: 0.6rem;
+	    transform: 
+	      translate(-50%, -50%)
+	      rotate(var(--angle))
+	      translateY(calc(-150px - var(--radius)))
+	      rotate(calc(-1 * var(--angle)));
+	  }
+	
+	  .type-button:hover {
+	    transform: 
+	      translate(-50%, -50%)
+	      rotate(var(--angle))
+	      translateY(calc(-150px - var(--radius)))
+	      rotate(calc(-1 * var(--angle)))
+	      scale(1.08);
+	  }
+	
+	  .type-button.selected {
+	    transform: 
+	      translate(-50%, -50%)
+	      rotate(var(--angle))
+	      translateY(calc(-150px - var(--radius)))
+	      rotate(calc(-1 * var(--angle)))
+	      scale(1.15);
+	  }
+	
+	  .wheel-center {
+	    width: 90px;
+	    height: 90px;
+	  }
+	
+	  .center-glow {
+	    width: 110px;
+	    height: 110px;
+	  }
+	
+	  .selected-type-name {
+	    font-size: 0.9rem;
+	  }
