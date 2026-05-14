@@ -132,20 +132,6 @@ html, body {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .wheel-and-panel-container {
-    width: 380px;
-    height: 380px;
-  }
-}
-
-@media (max-width: 480px) {
-  .wheel-and-panel-container {
-    width: 300px;
-    height: 300px;
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
